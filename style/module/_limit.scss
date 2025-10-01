@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "../utils/index" as *;
+@use "../variable" as *;
+
+.limit {
+  @include flexbox(
+    $display: inline-flex,
+    $gap: map.get($spacing, 2),
+    $align: center
+  );
+
+  &__icon {
+    @include layout-size($width: 18px);
+  }
+
+  &__desc {
+    @include font-style(
+      $color: var(--blue-500),
+      $font-weight: 400,
+      $font-size: map.get($fontSize, sm) + 2px
+    );
+  }
+}

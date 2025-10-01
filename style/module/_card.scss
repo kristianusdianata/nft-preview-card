@@ -1,0 +1,41 @@
+@use "sass:map";
+@use "../utils/index" as *;
+@use "../variable" as *;
+
+.card {
+  @include layout-size($width: 100%);
+  @include layout-background($color: var(--blue-900));
+  @include layout-spacing($padding: map.get($spacing, 6), $margin: auto);
+  @include border($radius: map.get($radius, br-4));
+  @include flexbox(
+    $display: flex,
+    $direction: column,
+    $gap: map.get($spacing, 5)
+  );
+
+  @include media-query-sm() {
+    @include layout-size($width: 340px);
+  }
+
+  &__header {
+    @include flexbox(
+      $display: flex,
+      $direction: column,
+      $gap: map.get($spacing, 5)
+    );
+  }
+
+  &__body {
+    @include flexbox(
+      $display: flex,
+      $direction: row,
+      $justify: space-between,
+      $align: center
+    );
+  }
+
+  &__footer {
+    @include border-top($width: 1px, $style: solid, $color: var(--blue-800));
+    @include layout-spacing($padding: map.get($spacing, 4) 0);
+  }
+}

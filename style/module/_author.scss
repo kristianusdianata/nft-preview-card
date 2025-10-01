@@ -1,0 +1,35 @@
+@use "sass:map";
+@use "../utils/index" as *;
+@use "../variable" as *;
+
+.author {
+  @include flexbox(
+    $display: flex,
+    $direction: row,
+    $align: center,
+    $gap: map.get($spacing, 4)
+  );
+
+  &__image {
+    @include layout-size($width: 31px);
+    @include border($radius: map.get($radius, br-full));
+    outline: 1px solid var(--white);
+  }
+
+  &__desc {
+    @include font-style(
+      $color: var(--blue-500),
+      $font-weight: 400,
+      $font-size: map.get($fontSize, sm) + 2px
+    );
+  }
+
+  &__link {
+    @include font-style($color: var(--white));
+    @include layout-spacing($margin: 0 0 0 map.get($spacing, 1));
+
+    &:hover {
+      @include font-style($color: var(--cyan-400));
+    }
+  }
+}

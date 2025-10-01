@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="./style/style.css" />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+  </head>
+  <body>
+    <main class="container">
+      <article class="card">
+        <header class="header card__header">
+          <a href="#" class="header__image">
+            <img src="./images/image-equilibrium.jpg" alt="Image quilibrium" />
+          </a>
+          <h1 class="header__title">
+            <a href="#" class="header__link">Equilibrium #3429</a>
+          </h1>
+          <p class="header__desc">
+            Our Equilibrium collection promotes balance and calm.
+          </p>
+        </header>
+        <div class="card__body">
+          <div class="balance">
+            <img
+              src="./images/icon-ethereum.svg"
+              alt=""
+              aria-hidden="true"
+              class="balance__icon"
+            />
+            <data class="balance__value"
+              >0.041 <abbr title="Ethereum">ETH</abbr></data
+            >
+          </div>
+
+          <div class="limit">
+            <img
+              src="./images/icon-clock.svg"
+              alt=""
+              aria-hidden="true"
+              class="limit__icon"
+            />
+            <time class="limit__desc">3 days left</time>
+          </div>
+        </div>
+
+        <footer class="card__footer">
+          <div class="author">
+            <img
+              src="./images/image-avatar.png"
+              alt="Author image"
+              class="author__image"
+            />
+            <p class="author__desc">
+              Creation of <a href="#" class="author__link">Jules Wyvern</a>
+            </p>
+          </div>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>

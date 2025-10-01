@@ -1,0 +1,53 @@
+@use "sass:map";
+@use "../utils/index" as *;
+@use "../variable" as *;
+
+.header {
+  &__image {
+    @include border($radius: map.get($radius, br-3));
+    @include layout-position($position: relative);
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      @include layout-position(
+        $position: absolute,
+        $top: 0,
+        $right: 0,
+        $bottom: 0,
+        $left: 0,
+        $z-index: 2
+      );
+      @include layout-background(
+        $color: rgba(0, 255, 247, 0.5),
+        $image: url("../images/icon-view.svg"),
+        $repeat: no-repeat,
+        $position: center,
+        $size: auto
+      );
+
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+    }
+  }
+
+  &__link:hover {
+    @include font-style($color: var(--cyan-400));
+  }
+
+  &__desc {
+    @include font-style(
+      $color: var(--blue-500),
+      $font-weight: 400,
+      $font-size: map.get($fontSize, base),
+      $line-height: 1.5
+    );
+  }
+}

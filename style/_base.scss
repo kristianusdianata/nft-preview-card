@@ -1,0 +1,45 @@
+@use "sass:map";
+@use "./variable" as *;
+@use "./utils/index" as *;
+
+:root {
+  @each $name, $color in $themeColors {
+    --#{"" + $name}: #{$color};
+  }
+}
+
+html {
+  font-size: map.get($fontSize, base);
+}
+
+h1 {
+  @include font-style(
+    $color: var(--white),
+    $font-weight: 600,
+    $font-size: map.get($fontSize, md)
+  );
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  @include layout-background($color: var(--blue-950));
+}
+
+img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
